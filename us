@@ -1,0 +1,68 @@
+
+// GoLang Programmer Dvorak, 
+// By Steve OConnor <steveoc64 at gmail dot com>
+// original by Roland Kaufmann <rlndkfmn at gmail dot com>
+partial alphanumeric_keys
+xkb_symbols "govorak" {
+
+    include "us(dvorak)"
+    name[Group1] = "English (golang programmer Dvorak)";
+
+    //  Top Row    ` ( { [ 1 2 3 4 5 + - * = BackSp
+    //  Shifted    < ) } ] 6 7 8 9 0 ! % ^ @ >
+
+    //             Unmodified       Shift           AltGr            Shift+AltGr
+    // symbols row, left side
+    key <TLDE> { [ apostrophe,     grave,         asciitilde                  ] };    // `  ~ ' 
+    key <AE01> { [ 1,                             exclam, 9,         period      ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+    key <AE02> { [ 2,                             at, 8,             period      ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+    key <AE03> { [ 3,                             numbersign, 7,     period      ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+    key <AE04> { [ 4,                             dollar, 6,         period      ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+    key <AE05> { [ 5,                             percent, 0,        period      ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+    // symbols row, right sider
+    key <AE06> { [ bracketleft,     bracketright,   trademark                   ] };
+    key <AE07> { [ braceleft,       braceright,     registered                  ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+    key <AE08> { [ parenleft,       parenright,     copyright                   ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+    key <AE09> { [ minus,           underscore,     percent                     ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+    key <AE10> { [ asterisk,        exclam,         asciicircum                 ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };  // Reduction keys
+    key <AE11> { [ slash,           plus,           percent                     ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };  // reversed interrobang
+    key <AE12> { [ equal,           colon,          ampersand                   ] };    // =  :  & 
+    key <BKSP> { [ BackSpace                                                    ] };    // 
+
+    // upper row, left side
+    key <AD01> { [ quotedbl,        colon,          numbersign                  ] };    // "  :  #
+    key <AD02> { [ comma,           less,           guillemotleft,   ellipsis   ] };    // ,  <  « …
+    key <AD03> { [ period,          greater,        guillemotright              ] };    // .  >  » ·
+    key <AD04> { [ p,               P,              paragraph,       section    ] };    // p  P  ¶ §
+    key <AD05> { [ y,               Y,              udiaeresis,      Udiaeresis ] };    // y  Y  ü Ü
+
+    // upper row, right side
+    key <AD07> { [ l,               L,              copyright                   ] };    // c  C  ©  
+    key <AD08> { [ c,               C,              copyright                   ] };    // c  C  ©  
+    key <AD09> { [ r,               R,              registered,      trademark  ] };    // r  R  ® ™
+    key <AD10> { [ g,               G                                           ] };    // l  L
+    key <AD11> { [ semicolon,       at,             ampersand                   ] };    // _  @  &
+    key <AD12> { [ backslash,       question,       numbersign                  ] };    // /  ?  #
+    key <BKSL> { [ slash,           bar,            exclam                      ] };    // \  |  !
+
+    // home row, left side
+    key <AC01> { [ a,               A,              aring,           Aring      ] };    // a  A  å Å
+    key <AC02> { [ o,               O,              oslash,          Ooblique   ] };    // o  O  ø Ø
+    key <AC03> { [ e,               E,              ae,              AE         ] };    // e  E  æ Æ
+    key <AC04> { [ u,               U,              eacute,          Eacute     ] };    // u  U  é É
+
+    // home row, right side
+    key <AC10> { [ s,               S,              ssharp                      ] };    // s  S  ß
+    key <AC07> { [ h,               H,              dead_acute                  ] };    // h  H  ´    
+    key <AC08> { [ t,               T,              thorn,           THORN      ] };    // t  T  þ Þ
+    key <AC09> { [ n,               N,              ntilde,          Ntilde     ] };    // n  N  ñ Ñ
+    key <AC06> { [ d,               D,              eth,             ETH        ] };    // d  D  ð Ð
+    key <AC11> { [ colon,           semicolon                                   ] };    // ;  :  
+
+    // lower row, left side
+    key <AB01> { [ apostrophe,      ampersand,      percent                     ] };    // '  %  &
+    key <AB07> { [ m,               M,              mu                          ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };  // m  M µ 
+
+    include "level3(ralt_switch)"
+};
+
